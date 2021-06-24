@@ -70,7 +70,4 @@ buck-out/
 .expo/
 web-build/
 
-#android
-android/
-
 # @end expo-cli
