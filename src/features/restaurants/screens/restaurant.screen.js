@@ -5,7 +5,7 @@ import { Searchbar, ActivityIndicator, Colors } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { RestaurantsContext } from "../../../services/restaurants.context";
+import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
 const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
