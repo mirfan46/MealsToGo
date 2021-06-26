@@ -10,9 +10,6 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import AppLoading from "expo-app-loading";
 import { theme } from "./src/infrastructure/theme";
 import { Navigation } from "./src/infrastructure/navigation";
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
-import { LocationContextProvider } from "./src/services/location/location.context";
-import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 
 const firebaseConfig = {
@@ -44,13 +41,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <AuthenticationContextProvider>
-          <LocationContextProvider>
-            <RestaurantsContextProvider>
-              <FavouritesContextProvider>
-                <Navigation />
-              </FavouritesContextProvider>
-            </RestaurantsContextProvider>
-          </LocationContextProvider>
+          <Navigation />
         </AuthenticationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
