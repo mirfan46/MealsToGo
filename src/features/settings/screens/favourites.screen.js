@@ -16,23 +16,25 @@ const NoFavouritesArea = styled(SafeArea)`
 export const FavouritesScreen = ({ navigation }) => {
   const { favourites } = useContext(FavouritesContext);
   return favourites.length ? (
-    <RestaurantList
-      data={favourites}
-      renderItem={({ item }) => {
-        return (
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("RestaurantDetail", { restaurant: item })
-            }
-          >
-            <Spacer position="bottom" size="large">
-              <RestaurantInfoCard restaurant={item} />
-            </Spacer>
-          </TouchableOpacity>
-        );
-      }}
-      keyExtractor={(item) => item.name}
-    />
+    <SafeArea>
+      <RestaurantList
+        data={favourites}
+        renderItem={({ item }) => {
+          return (
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("RestaurantDetail", { restaurant: item })
+              }
+            >
+              <Spacer position="bottom" size="large">
+                <RestaurantInfoCard restaurant={item} />
+              </Spacer>
+            </TouchableOpacity>
+          );
+        }}
+        keyExtractor={(item) => item.name}
+      />
+    </SafeArea>
   ) : (
     <NoFavouritesArea>
       <Text center>No favourites yet</Text>
