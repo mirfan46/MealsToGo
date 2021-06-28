@@ -70,4 +70,6 @@ buck-out/
 .expo/
 web-build/
 
+*/node_modules/**/*
+
 # @end expo-cli
